@@ -1,0 +1,29 @@
+{
+  "name": "adaptive-breakpoints",
+  "version": "1.0.0",
+  "authors": [
+    "Glenn Vandeuren <VandeurenGlenn@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "adaptive-breakpoints.html",
+  "license": "http://VandeurenGlenn.github.io/LICENSE.txt",
+  "homepage": "https://github.com/VandeurenGlenn/adaptive-breakpoints/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

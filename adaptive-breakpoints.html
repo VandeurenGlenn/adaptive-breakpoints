@@ -1,0 +1,58 @@
+<!--
+@license
+Copyright (c) 2015 The BasicElements Project Authors. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../fetch-element/fetch-element.html">
+
+<!--
+An element containing the Material Design Adaptive Breakpoints.
+
+Example:
+
+    <adaptive-breakpoints></adaptive-breakpoints>
+
+@demo
+-->
+<dom-module id="adaptive-breakpoints">
+
+  <template>
+    <fetch-element url="querys.json" data="{{_breakpoints}}" headers='{Content-type", "application/json}' auto></fetch-element>
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'adaptive-breakpoints',
+
+    hostAttributes: {
+      hidden: true
+    },
+
+    properties: {
+      _breakpoints: {
+        type: Array,
+        observer: '_breakpointsChanged'
+      },
+
+      breakpoints: {
+        type: Array,
+        notify: true
+      }
+    },
+
+    _breakpointsChanged: function (breakpoints) {
+      if (!this.breakpoints) {
+        this.breakpoints = [];
+        for (var i in breakpoints) {
+          breakpoints[i].name = i;
+          this.push('breakpoints', breakpoints[i]);
+        }
+      }
+    }
+
+  });
+
+</script>
